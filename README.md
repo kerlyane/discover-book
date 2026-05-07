@@ -1,2 +1,2 @@
-# discover-book
-site para doacao de livros 
+# discovery-book
+auxílio no projeto discovery book
