@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Livro - DiscoverBook</title>
+
+    <link rel="stylesheet" href="/css/solicitar.css">
+   
+</head>
+
+<body>
+
+<!-- HEADER -->
+<%- include("partials/topo") %>
+<%- include("partials/header") %>
+
+<section class="solicitar-container">
+
+    <h1>Solicitar Livro</h1>
+    <p>Preencha os dados da escola para solicitar o livro</p>
+
+    <form action="/solicitar" method="POST">
+
+        <label>Nome da Escola</label>
+        <input type="text" name="escola" required>
+
+        <label>Responsável</label>
+        <input type="text" name="responsavel" required>
+
+        <label>Cidade</label>
+        <input type="text" name="cidade" required>
+
+        <label>Livro Selecionado</label>
+        <input type="text" name="livro" value="Livro escolhido" readonly>
+
+        <label>Quantidade</label>
+        <input type="number" name="quantidade" min="1" required>
+
+        <label>Observações</label>
+        <textarea name="obs"></textarea>
+
+        <button type="submit">Confirmar Solicitação</button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+<%- include("partials/footer") %>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/5599999999999" class="whatsapp">
+    <img src="/img/whatsapp.png">
+</a>
+
+</body>
+</html>

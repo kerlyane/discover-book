@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Perfil</title>
+</head>
+
+<body>
+
+<h1>Meu Perfil</h1>
+
+<hr>
+
+<p><strong>Nome:</strong> <%= usuario.nome %></p>
+
+<p><strong>Usuário:</strong>
+    <%= usuario.username || "Ainda não definido" %>
+</p>
+
+<p><strong>Email:</strong> <%= usuario.email %></p>
+
+<p><strong>Tipo:</strong> <%= usuario.tipo %></p>
+
+<% if(usuario.foto){ %>
+
+<img
+src="/uploads/<%= usuario.foto %>"
+width="150">
+
+<% } else { %>
+
+<p>Sem foto.</p>
+
+<% } %>
+
+</body>
+</html>

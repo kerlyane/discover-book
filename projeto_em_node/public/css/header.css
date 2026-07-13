@@ -1,0 +1,23 @@
+.perfil-header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.perfil-header img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8472F4;
+}
+
+.perfil-header div{
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-header a{
+    text-decoration: none;
+    color: #333;
+}

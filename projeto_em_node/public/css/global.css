@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.topo {
+    background: #8472f4;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 15px;
+}
+
+.icon-book {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #f8f2d8;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-img {
+    width: 270px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+.categorias {
+    background: #f8f2d8;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.categorias ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+
+
+/*roda pé*/
+footer {
+    width: 100%;
+    margin-top: 60px;
+    margin: 0;
+}
+
+/*PARTE ROXA */
+.footer-top {
+    background: #8472f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+}
+
+/* COLUNA DE LINKS */
+.footer-links ul {
+    list-style: none;      
+    padding: 0;          
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+
+/* REDES SOCIAIS */
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.icons-redes img {
+    width: 28px;
+    margin-right: 8px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.footer-social h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    
+}
+
+
+/* pequenas imagens*/
+.footer-imgs img {
+    width: 210px;
+    margin-left: 10px;
+    
+}
+
+/* PARTE AZUL */
+.footer-bottom {
+    background: #00aac8;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-bottom-item img {
+    width: 26px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    font-size: 26px;
+    padding: 14px 16px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+.whatsapp img {
+    width: 30px;
+    height: 30px;
+}

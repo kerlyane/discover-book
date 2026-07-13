@@ -6,6 +6,12 @@
    
 }
 
+#wave {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove o espaço de respiro da imagem */
+    margin-top: -1px; /* Sobrepõe levemente para selar a brecha */
+}
 
 html {
     font-size: 16px;
@@ -22,7 +28,7 @@ body {
     color: white;
     text-align: center;
     display: flex;
-    align-items: center;
+    align-items:center;
     gap: 6px;
     padding: 6px 15px;
 }
@@ -95,8 +101,92 @@ header {
 .btn-login a:hover {
     background:#5f47ff;
 }
+ 
+/* 🔍 BARRA DE PESQUISA */
+.search-box input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 220px;
+}
 
+.search-box input:focus {
+    outline: none;
+    border-color: #8472f4;
+}
 
+.search-container {
+    position: relative; /* MUITO IMPORTANTE */
+}
+
+.resultados {
+    position: absolute;
+    top: 110%; /* joga pra baixo certinho */
+    left: 0;
+    width: 100%;
+    max-width: 350px;
+
+    background: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+.resultado-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.resultado-item img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.resultado-item:hover {
+    background: #f5f5f5;
+}
+
+.resultado-item h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.resultado-item p {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+
+.limpar {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #777;
+    cursor: pointer;
+}
+
+.limpar:hover {
+    color: #000;
+}
+
+.ver-mais {
+    margin-top: 10px;
+    background: #777;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
 /* ===== MENU PROFISSIONAL ===== */
 .nav-menu ul {
     list-style: none;
@@ -181,17 +271,19 @@ header {
 
 .search-container button {
     border: none;
-    background: #8472f4;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 50%;
+    background: transparent; /* tira o fundo roxo */
+    padding: 8px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.search-container button:hover {
-    background: #5f47ff;
+.search-container i {
+    font-size: 18px;
+    color: #555;
 }
+
+.search-container button:hover i {
+    color: #8472f4;
+}  
 .barra-categorias {
     width: 100%;
     background: white;
@@ -288,6 +380,7 @@ header {
     border-bottom: 2px solid #290341;
 }
 
+
 /* ===== SEÇÃO DOAÇÃO ===== */
 .doacao-container {
     display: flex;
@@ -364,6 +457,13 @@ header {
 
 .lado-direito button:hover {
     background: #6f4a82;
+}
+
+.lado-direito select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
 }
 
 /* WHATSAPP FLUTUANTE */

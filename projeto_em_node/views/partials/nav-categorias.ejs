@@ -3,18 +3,65 @@
         <ul>
             <li class="dropdown">
                 <a href="#">☰ Categorias</a>
+
                 <div class="mega-menu">
+
+                    <% const paginaAtual = typeof pagina !== "undefined" ? pagina : ""; %>
+
+                    <!-- CRIANÇAS -->
                     <div class="coluna">
                         <h4>Crianças</h4>
-                        <a href="/infantil">Infantil</a>
-                        <a href="/tres_cinco">3 a 5 anos</a>
-                        <a href="/seis_dez">6 a 10 anos</a>
+
+                        <% if (paginaAtual === "infantil") { %>
+
+                            <a href="/home">Home</a>
+                            <a href="/idade3-5">3 a 5 anos</a>
+                            <a href="/idade6-10">6 a 10 anos</a>
+
+                        <% } else if (paginaAtual === "tres-cinco") { %>
+
+                            <a href="/home">Home</a>
+                            <a href="/infantil">Infantil</a>
+                            <a href="/idade6-10">6 a 10 anos</a>
+
+                        <% } else if (paginaAtual === "seis-dez") { %>
+
+                            <a href="/home">Home</a>
+                            <a href="/infantil">Infantil</a>
+                            <a href="/idade3-5">3 a 5 anos</a>
+
+                        <% } else if (paginaAtual === "onze-mais") { %>
+
+                            <a href="/home">Home</a>
+                            <a href="/infantil">Infantil</a>
+                            <a href="/idade3-5">3 a 5 anos</a>
+                            <a href="/idade6-10">6 a 10 anos</a>
+
+                        <% } else if (paginaAtual === "e-medio") { %>
+
+                            <a href="/home">Home</a>
+                            <a href="/infantil">Infantil</a>
+                            <a href="/idade3-5">3 a 5 anos</a>
+                            <a href="/idade6-10">6 a 10 anos</a>
+
+                        <% } else { %>
+
+                            <a href="/infantil">Infantil</a>
+                            <a href="/idade3-5">3 a 5 anos</a>
+                            <a href="/idade6-10">6 a 10 anos</a>
+
+                        <% } %>
+
                     </div>
+
+                    <!-- JUVENIL -->
                     <div class="coluna">
                         <h4>Juvenil</h4>
-                        <a href="/onze_mais">11 a 14 anos</a>
-                        <a href="/e_medio">Ensino médio</a>
+                        <a href="/idade11-14">11 a 14 anos</a>
+                        <a href="/ensinomedio">Ensino Médio</a>
                     </div>
+
+                    <!-- OUTROS -->
                     <div class="coluna">
                         <h4>Outros</h4>
                         <a href="/home">Página principal</a>
@@ -23,6 +70,7 @@
                         <a href="/sobre">Sobre nós</a>
                         <a href="/acervo">Acervo</a>
                     </div>
+
                 </div>
             </li>
         </ul>

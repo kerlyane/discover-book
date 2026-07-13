@@ -8,11 +8,56 @@ function autenticado(req, res, next) {
   res.redirect('/login');
 }
 
+
+
 // Páginas estáticas
 router.get('/', (req, res) => res.redirect('/home'));
-router.get('/home', (req, res) => res.render('home', { usuario: req.session.usuario_nome || null }));
-router.get('/sobre', (req, res) => res.render('sobre', { usuario: req.session.usuario_nome || null }));
-router.get('/infantil', (req, res) => res.render('infantil', { usuario: req.session.usuario_nome || null }));
+router.get('/home', (req, res) =>
+    res.render('home', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "home"
+    })
+);
+router.get('/sobre', (req, res) =>
+    res.render('sobre', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "sobre"
+    })
+);
+router.get('/infantil', (req, res) =>
+    res.render('infantil', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "infantil"
+    })
+);
+
+router.get('/idade3-5', (req, res) =>
+    res.render('idade3-5', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "tres-cinco"
+    })
+);
+
+router.get('/idade6-10', (req, res) =>
+    res.render('idade6-10', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "seis-dez"
+    })
+);
+
+router.get('/idade11-14', (req, res) =>
+    res.render('idade11-14', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "onze-mais"
+    })
+);
+
+router.get('/ensinomedio', (req, res) =>
+    res.render('ensinomedio', {
+        usuario: req.session.usuario_nome || null,
+        pagina: "e-medio"
+    })
+);
 router.get('/livro', (req, res) => res.render('livro', { usuario: req.session.usuario_nome || null }));
 
 // Login
@@ -24,6 +69,8 @@ router.get('/login', (req, res) => {
   });
 });
 
+
+
 router.post('/login', (req, res) => {
   const { email_id, senha } = req.body;
 
@@ -32,9 +79,11 @@ router.post('/login', (req, res) => {
 
     const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
     if (senhaCorreta) {
-      req.session.email = usuario.email;
-      req.session.usuario_id = usuario.id;
-      req.session.usuario_nome = usuario.nome;
+     req.session.email = usuario.email;
+req.session.usuario_id = usuario.id;
+req.session.usuario_nome = usuario.nome;
+req.session.usuario_foto = usuario.foto;
+req.session.usuario_tipo = usuario.tipo;
       res.redirect('/home');
     } else {
       res.redirect('/login?erro=1');
@@ -87,11 +136,27 @@ router.post('/redefinir', async (req, res) => {
   });
 });
 
-// home
-router.get('/home', autenticado, (req, res) => {
-  res.render('home', { nome: req.session.usuario_nome });
-});
+// ================= PERFIL =================
 
+router.get('/perfil', autenticado, (req, res) => {
+
+  db.get(
+    'SELECT * FROM usuarios WHERE id = ?',
+    [req.session.usuario_id],
+    (err, usuario) => {
+
+      if (err || !usuario) {
+        return res.redirect('/home');
+      }
+
+      res.render('perfil', {
+        usuario
+      });
+
+    }
+  );
+
+});
 // Logout
 router.get('/logout', (req, res) => {
   req.session.destroy(() => res.redirect('/login'));
